@@ -12,7 +12,7 @@ import Footer from './components/layout/Footer'
 const emptyForm = {
   skill: '',
   location: '',
-  incomeGoal: '',
+  incomeType: '',
 }
 
 function App() {
@@ -38,7 +38,7 @@ function App() {
 
   // Keep result generation isolated so replacing with an API call is straightforward.
   const resultPayload = useMemo(() => {
-    if (!formData.skill || !formData.location || !formData.incomeGoal) {
+    if (!formData.skill || !formData.location || !formData.incomeType) {
       return null
     }
 

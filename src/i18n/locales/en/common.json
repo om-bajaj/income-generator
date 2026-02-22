@@ -19,6 +19,11 @@
     "te": "తెలుగు",
     "ta": "தமிழ்"
   },
+  "incomeType": {
+    "short": "Short-term",
+    "mid": "Mid-term",
+    "long": "Long-term"
+  },
   "footer": {
     "text": "Built for modern skill monetization planning. Your roadmap updates instantly with each input."
   },
@@ -29,14 +34,13 @@
     "skillPlaceholder": "e.g. Graphic Design",
     "locationLabel": "Your Location",
     "locationPlaceholder": "e.g. Austin, TX",
-    "incomeGoalLabel": "Monthly Income Goal (INR)",
-    "incomeGoalPlaceholder": "e.g. 3500",
+    "incomeTypeLabel": "What type of income do you want?",
+    "incomeTypePlaceholder": "Select income type",
     "cta": "Find Income Opportunities",
     "validation": {
       "skillRequired": "Skill is required.",
       "locationRequired": "Location is required.",
-      "incomeRequired": "Income goal is required.",
-      "incomeInvalid": "Enter a valid positive number."
+      "incomeTypeRequired": "Please select an income type."
     }
   },
   "processing": {
@@ -44,12 +48,12 @@
   },
   "results": {
     "title": "Your income roadmap is ready",
-    "summary": "Based on {{skill}} in {{location}}, targeting ₹{{incomeGoal}} / month.",
+    "summary": "Based on {{skill}} in {{location}}, focused on {{incomeType}} income.",
     "stepByStepTitle": "Step-by-step guidance",
     "timeToStart": "Time to start:",
     "potentialRange": "Potential range:",
     "tryAnotherSkill": "Try Another Skill",
-    "optionDescription": "{{skill}} opportunities in {{location}} with a path toward ₹{{incomeGoal}} monthly.",
+    "optionDescription": "{{skill}} opportunities in {{location}} aligned with your {{incomeType}} income preference.",
     "options": {
       "quickIncome": {
         "title": "Quick Income",

@@ -19,6 +19,11 @@
     "te": "తెలుగు",
     "ta": "தமிழ்"
   },
+  "incomeType": {
+    "short": "குறுகிய காலம்",
+    "mid": "இடைநிலை காலம்",
+    "long": "நீண்ட காலம்"
+  },
   "footer": {
     "text": "நவீன திறன் வருமான திட்டமிடலுக்காக உருவாக்கப்பட்டது. உங்கள் ஒவ்வொரு உள்ளீட்டுடனும் உங்கள் திட்டம் உடனே புதுப்பிக்கப்படுகிறது."
   },
@@ -29,14 +34,13 @@
     "skillPlaceholder": "உ.தி. கிராஃபிக் டிசைன்",
     "locationLabel": "உங்கள் இடம்",
     "locationPlaceholder": "உ.தி. சென்னை, தமிழ்நாடு",
-    "incomeGoalLabel": "மாதாந்திர வருமான இலக்கு (INR)",
-    "incomeGoalPlaceholder": "உ.தி. 3500",
+    "incomeTypeLabel": "உங்களுக்கு எந்த வகை வருமானம் வேண்டும்?",
+    "incomeTypePlaceholder": "வருமான வகையை தேர்வுசெய்க",
     "cta": "வருமான வாய்ப்புகளை கண்டுபிடிக்கவும்",
     "validation": {
       "skillRequired": "திறன் அவசியம்.",
       "locationRequired": "இடம் அவசியம்.",
-      "incomeRequired": "வருமான இலக்கு அவசியம்.",
-      "incomeInvalid": "செல்லுபடியாகும் நேர்மறை எண்ணை உள்ளிடவும்."
+      "incomeTypeRequired": "வருமான வகையை தேர்வு செய்யவும்."
     }
   },
   "processing": {
@@ -44,12 +48,12 @@
   },
   "results": {
     "title": "உங்கள் வருமான திட்டம் தயார்",
-    "summary": "{{location}} இல் உள்ள {{skill}} அடிப்படையில், மாதத்திற்கு ₹{{incomeGoal}} இலக்கு.",
+    "summary": "{{location}} இல் உள்ள {{skill}} அடிப்படையில், {{incomeType}} வருமானத்தில் கவனம் செலுத்தப்படுகிறது.",
     "stepByStepTitle": "படிப்படியான வழிகாட்டல்",
     "timeToStart": "தொடங்க வேண்டிய நேரம்:",
     "potentialRange": "சாத்தியமான வருமான வரம்பு:",
     "tryAnotherSkill": "மற்றொரு திறனை முயற்சிக்கவும்",
-    "optionDescription": "{{location}} இல் {{skill}} வாய்ப்புகள், மாதம் ₹{{incomeGoal}} இலக்கை நோக்கி.",
+    "optionDescription": "{{location}} இல் {{skill}} வாய்ப்புகள், உங்கள் {{incomeType}} வருமான விருப்பத்துடன் ஒத்ததாக.",
     "options": {
       "quickIncome": {
         "title": "வேகமான வருமானம்",

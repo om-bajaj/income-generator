@@ -19,6 +19,11 @@
     "te": "తెలుగు",
     "ta": "தமிழ்"
   },
+  "incomeType": {
+    "short": "शॉर्ट-टर्म",
+    "mid": "मिड-टर्म",
+    "long": "लॉन्ग-टर्म"
+  },
   "footer": {
     "text": "आधुनिक स्किल मोनेटाइज़ेशन प्लानिंग के लिए बनाया गया। आपके हर इनपुट के साथ आपका रोडमैप तुरंत अपडेट होता है।"
   },
@@ -29,14 +34,13 @@
     "skillPlaceholder": "उदा. ग्राफिक डिज़ाइन",
     "locationLabel": "आपका स्थान",
     "locationPlaceholder": "उदा. पुणे, महाराष्ट्र",
-    "incomeGoalLabel": "मासिक आय लक्ष्य (INR)",
-    "incomeGoalPlaceholder": "उदा. 3500",
+    "incomeTypeLabel": "आपको किस प्रकार की आय चाहिए?",
+    "incomeTypePlaceholder": "आय प्रकार चुनें",
     "cta": "आय के अवसर खोजें",
     "validation": {
       "skillRequired": "स्किल आवश्यक है।",
       "locationRequired": "स्थान आवश्यक है।",
-      "incomeRequired": "आय लक्ष्य आवश्यक है।",
-      "incomeInvalid": "मान्य धनात्मक संख्या दर्ज करें।"
+      "incomeTypeRequired": "कृपया आय का प्रकार चुनें।"
     }
   },
   "processing": {
@@ -44,12 +48,12 @@
   },
   "results": {
     "title": "आपका आय रोडमैप तैयार है",
-    "summary": "{{location}} में {{skill}} के आधार पर, ₹{{incomeGoal}} / माह लक्ष्य रखा गया है।",
+    "summary": "{{location}} में {{skill}} के आधार पर, {{incomeType}} आय पर फोकस किया गया है।",
     "stepByStepTitle": "चरण-दर-चरण मार्गदर्शन",
     "timeToStart": "शुरू करने का समय:",
     "potentialRange": "संभावित आय सीमा:",
     "tryAnotherSkill": "एक और स्किल आज़माएँ",
-    "optionDescription": "{{location}} में {{skill}} के अवसर, ₹{{incomeGoal}} मासिक लक्ष्य की दिशा में।",
+    "optionDescription": "{{location}} में {{skill}} के अवसर, आपकी {{incomeType}} आय पसंद के अनुसार।",
     "options": {
       "quickIncome": {
         "title": "तुरंत आय",

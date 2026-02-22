@@ -6,11 +6,7 @@ import ResultOptionCard from '../features/results/ResultOptionCard'
 import StepGuidance from '../features/results/StepGuidance'
 
 const ResultsPage = ({ results, onReset }) => {
-  const { t, i18n } = useTranslation()
-  const numberLocale = i18n.language.includes('-') ? i18n.language : `${i18n.language}-IN`
-  const formattedIncomeGoal = new Intl.NumberFormat(numberLocale).format(
-    Number(results.profile.incomeGoal),
-  )
+  const { t } = useTranslation()
 
   return (
     <Motion.div
@@ -27,7 +23,7 @@ const ResultsPage = ({ results, onReset }) => {
           {t('results.summary', {
             skill: results.profile.skill,
             location: results.profile.location,
-            incomeGoal: formattedIncomeGoal,
+            incomeType: t(`incomeType.${results.profile.incomeType}`),
           })}
         </p>
       </GlassCard>

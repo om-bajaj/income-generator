@@ -19,6 +19,11 @@
     "te": "తెలుగు",
     "ta": "தமிழ்"
   },
+  "incomeType": {
+    "short": "शॉर्ट-टर्म",
+    "mid": "मिड-टर्म",
+    "long": "लाँग-टर्म"
+  },
   "footer": {
     "text": "आधुनिक कौशल्य उत्पन्न नियोजनासाठी तयार. तुमचा रोडमॅप प्रत्येक इनपुटनंतर लगेच अपडेट होतो."
   },
@@ -29,14 +34,13 @@
     "skillPlaceholder": "उदा. ग्राफिक डिझाइन",
     "locationLabel": "तुमचे स्थान",
     "locationPlaceholder": "उदा. पुणे, महाराष्ट्र",
-    "incomeGoalLabel": "मासिक उत्पन्न लक्ष्य (INR)",
-    "incomeGoalPlaceholder": "उदा. 3500",
+    "incomeTypeLabel": "तुम्हाला कोणत्या प्रकारचे उत्पन्न हवे आहे?",
+    "incomeTypePlaceholder": "उत्पन्न प्रकार निवडा",
     "cta": "उत्पन्न संधी शोधा",
     "validation": {
       "skillRequired": "कौशल्य आवश्यक आहे.",
       "locationRequired": "स्थान आवश्यक आहे.",
-      "incomeRequired": "उत्पन्न लक्ष्य आवश्यक आहे.",
-      "incomeInvalid": "वैध सकारात्मक संख्या प्रविष्ट करा."
+      "incomeTypeRequired": "कृपया उत्पन्न प्रकार निवडा."
     }
   },
   "processing": {
@@ -44,12 +48,12 @@
   },
   "results": {
     "title": "तुमचा उत्पन्न रोडमॅप तयार आहे",
-    "summary": "{{location}} मधील {{skill}} वर आधारित, ₹{{incomeGoal}} / महिना लक्ष्य.",
+    "summary": "{{location}} मधील {{skill}} वर आधारित, {{incomeType}} उत्पन्नावर लक्ष केंद्रित केले आहे.",
     "stepByStepTitle": "टप्प्याटप्प्याने मार्गदर्शन",
     "timeToStart": "सुरुवातीस लागणारा वेळ:",
     "potentialRange": "संभाव्य उत्पन्न श्रेणी:",
     "tryAnotherSkill": "दुसरे कौशल्य वापरून पहा",
-    "optionDescription": "{{location}} मधील {{skill}} संधी, ₹{{incomeGoal}} मासिक लक्ष्यासाठी.",
+    "optionDescription": "{{location}} मधील {{skill}} संधी, तुमच्या {{incomeType}} उत्पन्न पसंतीनुसार.",
     "options": {
       "quickIncome": {
         "title": "जलद उत्पन्न",

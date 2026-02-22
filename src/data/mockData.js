@@ -33,17 +33,15 @@ const guidanceKeys = [
   'results.guidance.step5',
 ]
 
-export const generateMockResults = ({ skill, location, incomeGoal }, t, language) => {
+export const generateMockResults = ({ skill, location, incomeType }, t) => {
   const cleanSkill = skill.trim()
   const cleanLocation = location.trim()
-  const numberLocale = language.includes('-') ? language : `${language}-IN`
-  const formattedIncomeGoal = new Intl.NumberFormat(numberLocale).format(Number(incomeGoal))
 
   return {
     profile: {
       skill: cleanSkill,
       location: cleanLocation,
-      incomeGoal,
+      incomeType,
     },
     options: optionBlueprints.map((item) => {
       const translatedBullets = t(item.bulletsKey, { returnObjects: true })
@@ -58,7 +56,7 @@ export const generateMockResults = ({ skill, location, incomeGoal }, t, language
         description: t('results.optionDescription', {
           skill: cleanSkill,
           location: cleanLocation,
-          incomeGoal: formattedIncomeGoal,
+          incomeType: t(`incomeType.${incomeType}`),
         }),
       }
     }),

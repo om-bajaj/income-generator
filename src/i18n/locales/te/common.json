@@ -19,6 +19,11 @@
     "te": "తెలుగు",
     "ta": "தமிழ்"
   },
+  "incomeType": {
+    "short": "షార్ట్-టర్మ్",
+    "mid": "మిడ్-టర్మ్",
+    "long": "లాంగ్-టర్మ్"
+  },
   "footer": {
     "text": "ఆధునిక స్కిల్ మానిటైజేషన్ ప్లానింగ్ కోసం నిర్మించబడింది. ప్రతి ఇన్‌పుట్‌తో మీ రోడ్‌మ్యాప్ వెంటనే అప్‌డేట్ అవుతుంది."
   },
@@ -29,14 +34,13 @@
     "skillPlaceholder": "ఉదా. గ్రాఫిక్ డిజైన్",
     "locationLabel": "మీ స్థలం",
     "locationPlaceholder": "ఉదా. హైదరాబాద్, తెలంగాణ",
-    "incomeGoalLabel": "నెలవారీ ఆదాయ లక్ష్యం (INR)",
-    "incomeGoalPlaceholder": "ఉదా. 3500",
+    "incomeTypeLabel": "మీకు ఏ రకమైన ఆదాయం కావాలి?",
+    "incomeTypePlaceholder": "ఆదాయం రకం ఎంచుకోండి",
     "cta": "ఆదాయ అవకాశాలను కనుగొనండి",
     "validation": {
       "skillRequired": "నైపుణ్యం అవసరం.",
       "locationRequired": "స్థానం అవసరం.",
-      "incomeRequired": "ఆదాయ లక్ష్యం అవసరం.",
-      "incomeInvalid": "చెల్లుబాటు అయ్యే సానుకూల సంఖ్యను నమోదు చేయండి."
+      "incomeTypeRequired": "దయచేసి ఆదాయం రకం ఎంచుకోండి."
     }
   },
   "processing": {
@@ -44,12 +48,12 @@
   },
   "results": {
     "title": "మీ ఆదాయ రోడ్‌మ్యాప్ సిద్ధంగా ఉంది",
-    "summary": "{{location}} లోని {{skill}} ఆధారంగా, నెలకు ₹{{incomeGoal}} లక్ష్యం.",
+    "summary": "{{location}} లోని {{skill}} ఆధారంగా, {{incomeType}} ఆదాయంపై ఫోకస్ చేస్తున్నాం.",
     "stepByStepTitle": "దశల వారీ మార్గదర్శకం",
     "timeToStart": "ప్రారంభించడానికి సమయం:",
     "potentialRange": "సాధ్యమైన ఆదాయ పరిధి:",
     "tryAnotherSkill": "ఇంకో నైపుణ్యం ప్రయత్నించండి",
-    "optionDescription": "{{location}} లోని {{skill}} అవకాశాలు, నెలకు ₹{{incomeGoal}} లక్ష్యానికి దారి.",
+    "optionDescription": "{{location}} లోని {{skill}} అవకాశాలు, మీ {{incomeType}} ఆదాయ అభిరుచికి అనుగుణంగా.",
     "options": {
       "quickIncome": {
         "title": "త్వరిత ఆదాయం",

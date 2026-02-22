@@ -8,7 +8,7 @@ import InputField from '../components/ui/InputField'
 const emptyForm = {
   skill: '',
   location: '',
-  incomeGoal: '',
+  incomeType: '',
 }
 
 const HomePage = ({ onStart, initialValues }) => {
@@ -33,10 +33,8 @@ const HomePage = ({ onStart, initialValues }) => {
       nextErrors.location = t('home.validation.locationRequired')
     }
 
-    if (!formData.incomeGoal.trim()) {
-      nextErrors.incomeGoal = t('home.validation.incomeRequired')
-    } else if (!Number.isFinite(Number(formData.incomeGoal)) || Number(formData.incomeGoal) <= 0) {
-      nextErrors.incomeGoal = t('home.validation.incomeInvalid')
+    if (!formData.incomeType) {
+      nextErrors.incomeType = t('home.validation.incomeTypeRequired')
     }
 
     return nextErrors
@@ -91,15 +89,25 @@ const HomePage = ({ onStart, initialValues }) => {
             error={errors.location}
           />
 
-          <InputField
-            label={t('home.incomeGoalLabel')}
-            name="incomeGoal"
-            value={formData.incomeGoal}
-            onChange={handleChange}
-            type="number"
-            placeholder={t('home.incomeGoalPlaceholder')}
-            error={errors.incomeGoal}
-          />
+          <label className="block">
+            <span className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-200">
+              {t('home.incomeTypeLabel')}
+            </span>
+            <select
+              name="incomeType"
+              value={formData.incomeType}
+              onChange={handleChange}
+              className="w-full rounded-xl border border-white/50 bg-white/80 px-4 py-3 text-sm text-slate-800 outline-none transition focus:border-sky-300 focus:ring-2 focus:ring-sky-200 dark:border-white/15 dark:bg-slate-800/80 dark:text-slate-100"
+            >
+              <option value="">{t('home.incomeTypePlaceholder')}</option>
+              <option value="short">{t('incomeType.short')}</option>
+              <option value="mid">{t('incomeType.mid')}</option>
+              <option value="long">{t('incomeType.long')}</option>
+            </select>
+            {errors.incomeType ? (
+              <span className="mt-1 block text-xs text-rose-500">{errors.incomeType}</span>
+            ) : null}
+          </label>
 
           <GradientButton type="submit">{t('home.cta')}</GradientButton>
         </form>
