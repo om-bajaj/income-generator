@@ -1,5 +1,6 @@
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 import { motion as Motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import GlassCard from '../components/ui/GlassCard'
 import GradientButton from '../components/ui/GradientButton'
 import InputField from '../components/ui/InputField'
@@ -11,14 +12,9 @@ const emptyForm = {
 }
 
 const HomePage = ({ onStart, initialValues }) => {
+  const { t } = useTranslation()
   const [formData, setFormData] = useState(initialValues ?? emptyForm)
   const [errors, setErrors] = useState({})
-
-  const subtitle = useMemo(
-    () =>
-      'Turn your skill into clear income paths with smart next-step guidance.',
-    [],
-  )
 
   const handleChange = (event) => {
     const { name, value } = event.target
@@ -30,17 +26,17 @@ const HomePage = ({ onStart, initialValues }) => {
     const nextErrors = {}
 
     if (!formData.skill.trim()) {
-      nextErrors.skill = 'Skill is required.'
+      nextErrors.skill = t('home.validation.skillRequired')
     }
 
     if (!formData.location.trim()) {
-      nextErrors.location = 'Location is required.'
+      nextErrors.location = t('home.validation.locationRequired')
     }
 
     if (!formData.incomeGoal.trim()) {
-      nextErrors.incomeGoal = 'Income goal is required.'
+      nextErrors.incomeGoal = t('home.validation.incomeRequired')
     } else if (!Number.isFinite(Number(formData.incomeGoal)) || Number(formData.incomeGoal) <= 0) {
-      nextErrors.incomeGoal = 'Enter a valid positive number.'
+      nextErrors.incomeGoal = t('home.validation.incomeInvalid')
     }
 
     return nextErrors
@@ -68,44 +64,44 @@ const HomePage = ({ onStart, initialValues }) => {
       className="mx-auto w-full max-w-xl"
     >
       <GlassCard>
-        <p className="inline-flex rounded-full border border-white/60 bg-white/60 px-3 py-1 text-xs font-medium text-slate-600">
-          Skill-to-Income Navigator
+        <p className="inline-flex rounded-full border border-white/60 bg-white/60 px-3 py-1 text-xs font-medium text-slate-600 dark:border-white/20 dark:bg-slate-800/70 dark:text-slate-200">
+          {t('app.brandName')}
         </p>
-        <h1 className="mt-4 text-3xl font-bold tracking-tight text-slate-900">
-          Discover your best earning path
+        <h1 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50">
+          {t('home.title')}
         </h1>
-        <p className="mt-2 text-sm text-slate-600">{subtitle}</p>
+        <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">{t('home.subtitle')}</p>
 
         <form onSubmit={handleSubmit} className="mt-6 space-y-4">
           <InputField
-            label="Your Skill"
+            label={t('home.skillLabel')}
             name="skill"
             value={formData.skill}
             onChange={handleChange}
-            placeholder="e.g. Graphic Design"
+            placeholder={t('home.skillPlaceholder')}
             error={errors.skill}
           />
 
           <InputField
-            label="Your Location"
+            label={t('home.locationLabel')}
             name="location"
             value={formData.location}
             onChange={handleChange}
-            placeholder="e.g. Austin, TX"
+            placeholder={t('home.locationPlaceholder')}
             error={errors.location}
           />
 
           <InputField
-            label="Monthly Income Goal (USD)"
+            label={t('home.incomeGoalLabel')}
             name="incomeGoal"
             value={formData.incomeGoal}
             onChange={handleChange}
             type="number"
-            placeholder="e.g. 3500"
+            placeholder={t('home.incomeGoalPlaceholder')}
             error={errors.incomeGoal}
           />
 
-          <GradientButton type="submit">Find Income Opportunities</GradientButton>
+          <GradientButton type="submit">{t('home.cta')}</GradientButton>
         </form>
       </GlassCard>
     </Motion.div>

@@ -1,53 +1,43 @@
 const optionBlueprints = [
   {
     id: 'quick-income',
-    title: 'Quick Income',
-    timeToStart: '1-2 weeks',
-    estimate: '$400-$1,000 / month',
-    bullets: [
-      'Start with freelance micro-projects and paid task platforms.',
-      'Offer one clear service package with fixed pricing to close faster.',
-      'Use social proof snippets in each outreach message.',
-    ],
+    titleKey: 'results.options.quickIncome.title',
+    timeToStartKey: 'results.options.quickIncome.timeToStart',
+    estimateKey: 'results.options.quickIncome.estimate',
+    bulletsKey: 'results.options.quickIncome.bullets',
     accent: 'from-pink-400/40 to-rose-300/30',
   },
   {
     id: 'better-income',
-    title: 'Better Income',
-    timeToStart: '1-3 months',
-    estimate: '$1,500-$3,500 / month',
-    bullets: [
-      'Build a portfolio set with three strong case studies.',
-      'Position for recurring retainers instead of one-off tasks.',
-      'Create a repeatable lead generation routine each week.',
-    ],
+    titleKey: 'results.options.betterIncome.title',
+    timeToStartKey: 'results.options.betterIncome.timeToStart',
+    estimateKey: 'results.options.betterIncome.estimate',
+    bulletsKey: 'results.options.betterIncome.bullets',
     accent: 'from-sky-400/40 to-cyan-300/30',
   },
   {
     id: 'upgrade-path',
-    title: 'Upgrade Path',
-    timeToStart: '3-6 months',
-    estimate: '$4,000+ / month',
-    bullets: [
-      'Package your expertise into premium offers with clear outcomes.',
-      'Add automation and templates so delivery scales without burnout.',
-      'Grow authority through content, referrals, and strategic partnerships.',
-    ],
+    titleKey: 'results.options.upgradePath.title',
+    timeToStartKey: 'results.options.upgradePath.timeToStart',
+    estimateKey: 'results.options.upgradePath.estimate',
+    bulletsKey: 'results.options.upgradePath.bullets',
     accent: 'from-violet-400/40 to-fuchsia-300/30',
   },
 ]
 
-const guidanceTemplate = [
-  'Define a focused offer around your strongest skill.',
-  'Collect market proof by testing your offer with 5-10 prospects.',
-  'Refine pricing and messaging based on feedback and conversion rate.',
-  'Systemize client onboarding and delivery with reusable templates.',
-  'Scale income through referrals, partnerships, and recurring packages.',
+const guidanceKeys = [
+  'results.guidance.step1',
+  'results.guidance.step2',
+  'results.guidance.step3',
+  'results.guidance.step4',
+  'results.guidance.step5',
 ]
 
-export const generateMockResults = ({ skill, location, incomeGoal }) => {
+export const generateMockResults = ({ skill, location, incomeGoal }, t, language) => {
   const cleanSkill = skill.trim()
   const cleanLocation = location.trim()
+  const numberLocale = language.includes('-') ? language : `${language}-IN`
+  const formattedIncomeGoal = new Intl.NumberFormat(numberLocale).format(Number(incomeGoal))
 
   return {
     profile: {
@@ -55,12 +45,27 @@ export const generateMockResults = ({ skill, location, incomeGoal }) => {
       location: cleanLocation,
       incomeGoal,
     },
-    options: optionBlueprints.map((item) => ({
-      ...item,
-      description: `${cleanSkill} opportunities in ${cleanLocation} with a path toward $${Number(incomeGoal).toLocaleString()} monthly.`,
-    })),
-    guidanceSteps: guidanceTemplate.map(
-      (step, index) => `${step} Step focus: ${cleanSkill} strategy #${index + 1}.`,
+    options: optionBlueprints.map((item) => {
+      const translatedBullets = t(item.bulletsKey, { returnObjects: true })
+
+      return {
+        id: item.id,
+        title: t(item.titleKey),
+        timeToStart: t(item.timeToStartKey),
+        estimate: t(item.estimateKey),
+        bullets: Array.isArray(translatedBullets) ? translatedBullets : [],
+        accent: item.accent,
+        description: t('results.optionDescription', {
+          skill: cleanSkill,
+          location: cleanLocation,
+          incomeGoal: formattedIncomeGoal,
+        }),
+      }
+    }),
+    guidanceSteps: guidanceKeys.map((key) =>
+      t(key, {
+        skill: cleanSkill,
+      }),
     ),
   }
 }

@@ -1,9 +1,12 @@
 import { useEffect } from 'react'
 import { motion as Motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import GlassCard from '../components/ui/GlassCard'
 import Loader from '../components/ui/Loader'
 
 const ProcessingPage = ({ onComplete }) => {
+  const { t } = useTranslation()
+
   useEffect(() => {
     const timer = setTimeout(() => {
       onComplete()
@@ -25,8 +28,8 @@ const ProcessingPage = ({ onComplete }) => {
         <div className="flex justify-center">
           <Loader />
         </div>
-        <p className="mt-4 text-base font-medium text-slate-700">
-          Finding the best earning options for you...
+        <p className="mt-4 text-base font-medium text-slate-700 dark:text-slate-200">
+          {t('processing.message')}
         </p>
       </GlassCard>
     </Motion.div>

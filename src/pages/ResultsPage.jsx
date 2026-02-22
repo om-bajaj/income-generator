@@ -1,10 +1,17 @@
 import { motion as Motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import GradientButton from '../components/ui/GradientButton'
 import GlassCard from '../components/ui/GlassCard'
 import ResultOptionCard from '../features/results/ResultOptionCard'
 import StepGuidance from '../features/results/StepGuidance'
 
 const ResultsPage = ({ results, onReset }) => {
+  const { t, i18n } = useTranslation()
+  const numberLocale = i18n.language.includes('-') ? i18n.language : `${i18n.language}-IN`
+  const formattedIncomeGoal = new Intl.NumberFormat(numberLocale).format(
+    Number(results.profile.incomeGoal),
+  )
+
   return (
     <Motion.div
       key="results"
@@ -15,11 +22,13 @@ const ResultsPage = ({ results, onReset }) => {
       className="mx-auto w-full max-w-5xl"
     >
       <GlassCard className="mb-6">
-        <h2 className="text-2xl font-bold text-slate-900">Your income roadmap is ready</h2>
-        <p className="mt-2 text-sm text-slate-600">
-          Based on <strong>{results.profile.skill}</strong> in{' '}
-          <strong>{results.profile.location}</strong>, targeting{' '}
-          <strong>${Number(results.profile.incomeGoal).toLocaleString()} / month</strong>.
+        <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-50">{t('results.title')}</h2>
+        <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+          {t('results.summary', {
+            skill: results.profile.skill,
+            location: results.profile.location,
+            incomeGoal: formattedIncomeGoal,
+          })}
         </p>
       </GlassCard>
 
@@ -34,7 +43,7 @@ const ResultsPage = ({ results, onReset }) => {
       </div>
 
       <div className="mx-auto mt-6 max-w-sm">
-        <GradientButton onClick={onReset}>Try Another Skill</GradientButton>
+        <GradientButton onClick={onReset}>{t('results.tryAnotherSkill')}</GradientButton>
       </div>
     </Motion.div>
   )

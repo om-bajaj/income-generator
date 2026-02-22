@@ -1,0 +1,9 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: skill-to-income-navigator
+    ports:
+      - "8080:80"
+    restart: unless-stopped

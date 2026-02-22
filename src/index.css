@@ -1,22 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Noto+Sans+Tamil:wght@400;500;600;700;800&family=Noto+Sans+Telugu:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Noto Sans', 'Noto Sans Devanagari', 'Noto Sans Telugu', 'Noto Sans Tamil', sans-serif;
 }
 
 body {
   margin: 0;
   min-width: 320px;
   color: #0f172a;
+  transition: background 220ms ease, color 220ms ease;
   background:
     radial-gradient(circle at 12% 16%, rgba(244, 114, 182, 0.34), transparent 36%),
     radial-gradient(circle at 88% 18%, rgba(56, 189, 248, 0.35), transparent 33%),
     radial-gradient(circle at 50% 88%, rgba(251, 191, 36, 0.26), transparent 38%),
     linear-gradient(135deg, #fef3ff 0%, #eff6ff 45%, #ecfeff 100%);
+}
+
+html.dark body {
+  color: #e2e8f0;
+  background:
+    radial-gradient(circle at 12% 16%, rgba(217, 70, 239, 0.18), transparent 40%),
+    radial-gradient(circle at 88% 18%, rgba(14, 165, 233, 0.19), transparent 36%),
+    radial-gradient(circle at 50% 88%, rgba(59, 130, 246, 0.16), transparent 40%),
+    linear-gradient(135deg, #020617 0%, #0f172a 55%, #1e293b 100%);
 }
 
 #root {
@@ -54,4 +64,16 @@ body {
   height: 280px;
   width: 280px;
   background: radial-gradient(circle, rgba(251, 191, 36, 0.24), rgba(251, 191, 36, 0));
+}
+
+html.dark .orb-left {
+  background: radial-gradient(circle, rgba(217, 70, 239, 0.2), rgba(217, 70, 239, 0));
+}
+
+html.dark .orb-right {
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.2), rgba(14, 165, 233, 0));
+}
+
+html.dark .orb-bottom {
+  background: radial-gradient(circle, rgba(96, 165, 250, 0.18), rgba(96, 165, 250, 0));
 }
